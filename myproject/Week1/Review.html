@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        /* 폰트 */
+        font-family: 'Nanum Gothic Coding', monospace;
+    }
+    .wrapper{
+        background-color:grey;
+        width: 500px;
+    }
+    .order_selection{
+        text-align: center
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="product">
+            <div>
+                <!-- 상품사진 -->
+            </div>
+            <div class="product_name">
+                <!-- 상품제목 -->
+                <span style="font-size: 20px;font-weight:bold">상품제목</span>
+                <span style="font-size: 18px;font-weight:bold">가격: 10,000원/개</h2>
+            </div>
+            <div class="product_description">
+                <!-- 상품상세 -->
+                <p>이 상품으로 말할 것 같으면 용왕이 찾지 못한 토끼의 간을 찾아 빨간 망토의 늑대와 아기돼지 삼형제의 숨결이 고루 녹아 있는 먹으면 120까지 살 수 있다는 이 상품으로 ...
+                </p>
+            </div>
+        </div>
+        <div class="order">
+            <div class="order_title">
+                <h1>주문하기</h1>
+                <!-- 주문하기 -->
+            </div>
+            <div class="order_selection">
+                <!-- 주문 내용 -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="btn btn-outline-secondary" type="button">주문자이름</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="" aria-label=""
+                        aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">수량</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="button">연락처</button>
+                    </div>
+                    <input type="text" class="form-control" placeholder="" aria-label=""
+                        aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="button">주소</button>
+                    </div>
+                    <input type="text" class="form-control" placeholder="" aria-label=""
+                        aria-describedby="basic-addon1">
+                </div>
+
+            </div>
+            <div clss="order_button">
+                <!-- 주문하기 버튼 -->
+                <button type="button" class="btn btn-primary">주문하기</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
