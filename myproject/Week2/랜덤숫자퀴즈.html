@@ -15,18 +15,18 @@
 
     <script>
         function q1() {
-            for(i=0; i<101; i++){
-            let input_num = $('#magicnum').val();
-            let url = "http://numbersapi.com/" +input_num;
-            // 여기에 코드를 입력하세요
-            $.ajax({
-                type: "GET",
-                url: url,
-                data: {},
-                success: function (response) {
-                    console.log(input_num, response);
-                },
-            });
+            for (i = 0; i < 101; i++) {
+                let input_num = $('#magicnum').val();
+                let url = "http://numbersapi.com/" + input_num;
+                // 여기에 코드를 입력하세요
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    data: {},
+                    success: function (response) {
+                        console.log(input_num, response);
+                    },
+                });
             }
         }
     </script>
