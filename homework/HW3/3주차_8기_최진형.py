@@ -11,7 +11,8 @@ music_all = soup.select('#body-content > div.newest-list > div > table > tbody >
 for music in music_all:
     
     title = music.select_one('td.info > a.title.ellipsis').text
+    
     if title:
         rank = music.select_one('td.number').find(text=True, recursive=False)
-        print(rank.strip(), title.strip())
-
+        artist = music.select_one('td.info > a.artist.ellipsis').text
+        print(rank.strip(), title.strip(), artist.strip())
