@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>애플워치 구매</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet">
+    <!-- css파일 불러오기 -->
+    <link href="HW2_8_최진형.css" rel="stylesheet">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        function order_message() {
+            let Name = $('#cutomer-name').val();
+            let Quantity = $('#inputGroupSelect01 option:selected').val();
+            let Address = $('#cutomer-address').val();
+            let Phone_no= $('#cutomer-phone').val();
+            
+            if(Name!='' && Quantity!='--' && Address!='' && Phone_no!=''){
+                alert(Name +'님, Apple Watch '+ Quantity+'개 주문이 완료되었습니다');
+                window.location.reload();
+            }else{
+                alert('입력을 완료해주세요');
+            }
+        }
+        $(document).ready(function(){            
+            $.ajax({
+                type: "GET",
+                url: "https://api.manana.kr/exchange/rate.json",
+                data: {},
+                success: function (response) {
+                  let ex_rate = response[1]["rate"];
+                  temp_html=`
+                  <span style="font-size: 15px;color: blue;">${ex_rate}</span>`;
+                  $('#ExRate').append(ex_rate);                                                        
+                },
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="product_description">
+            <div class="product_image">
+                <!-- 이미지삽입 -->
+            </div>
+            <div class="service_title">
+                <span style="font-size: 30px;font-weight: bold;">Apple Watch 5세대 </span>
+                <span style="font-size: 18px;color: gray;">539,000원 / 개</span>
+            </div>
+            <div class="service_detail">
+                <p>지금까지의 Apple Watch 중 가장 앞선 모델. 상시표시형 Retina 디스플레이, ‘국제 긴급 구조 요청’ 및 ‘넘어짐 감지’ 기능 그리고 내장 나침반까지.</p>
+            </div>
+        </div>
+        <div class="Exchange_rate">
+            <span>달러-원 환율 : </span>
+            <span id="ExRate"></span>
+        </div>
+        <div class="product_order">
+            <div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">주문자 이름</span>
+                    </div>
+                    <input type="text" id="cutomer-name" class="form-control" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">수량</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>--</option>
+                        <option value="1">1개</option>
+                        <option value="2">2개</option>
+                        <option value="3">3개</option>
+                        <option value="4">4개</option>
+                        <option value="5">5개</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">주소</span>
+                    </div>
+                    <input type="text" id="cutomer-address" class="form-control" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">전화번호</span>
+                    </div>
+                    <input type="text" id="cutomer-phone" class="form-control" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div>
+                <button onclick="order_message()" type="button" class="btn btn-primary">주문하기</button>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</body>
+
+</html>

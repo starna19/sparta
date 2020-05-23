@@ -1,0 +1,36 @@
+*{
+    font-family: 'Gothic A1', sans-serif;
+}
+.wrapper{
+    width:400px;
+    margin:50px auto;
+}
+.product_image {
+    width: 400px;
+    height: 400px;
+    background-image: url('https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MTPK2_VW_PF+watch-44-alum-silver-nc-5s_VW_PF_WF_CO_GEO_KR?wid=750&hei=712&trim=1,0&fmt=p-jpg&qlt=80&op_usm=0.5,0.5&.v=1566419579642,1567126503608');
+    background-size: contain;
+    background-position: center;
+    margin-bottom:30px;
+}
+.service_title {
+    width: 400px;
+    margin-bottom:10px;
+}
+.service_detail{
+    width: 400px;
+    margin-bottom:20px;            
+}
+.Exchange_rate{
+    color: blue;
+    font-size: 15px;
+    margin-bottom:10px;
+}
+.product_order {
+    width: 400px;
+    text-align: center;
+}
+.input-group-text{
+    font-weight: bold;
+    font-size: small;
+}
