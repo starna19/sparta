@@ -20,6 +20,6 @@ for movie in movies:
     if a_tag is not None:
         title = a_tag.text
         point = movie.select_one('td.point').text
-        rank_new = movie.select_one('td.ac > img')['alt']
+        rank_new = movie.select_one('td.ac > img')['alt'])
         print(rank,rank_new, title, point)
         rank +=1
